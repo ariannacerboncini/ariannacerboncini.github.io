@@ -1,0 +1,41 @@
+[
+    {
+        "squadraCasa": "La Resistente Mujeres",
+        "squadraTrasferta": "Pincopalla",
+        "data": "2026-09-24",
+        "ora": "21:00",
+        "campo": "Campo sportivo Ex Corderia",
+        "descrizione": "Test calendario - Giornata 1",
+        "risultato": {
+            "casa": 2,
+            "trasferta": 0
+        }
+    },
+    {
+        "squadraCasa": "CUS Genova ASD",
+        "squadraTrasferta": "La Resistente Mujeres",
+        "data": "2026-09-30",
+        "ora": "20:30",
+        "campo": "Scuola calcio Internazionale Genova",
+        "descrizione": "Test calendario - Giornata 2",
+        "risultato": null
+    },
+    {
+        "squadraCasa": "La Resistente Mujeres",
+        "squadraTrasferta": "ASD Superba Multedo",
+        "data": "2026-10-07",
+        "ora": "21:00",
+        "campo": "Campo sportivo Ex Corderia",
+        "descrizione": "Test calendario - Giornata 3",
+        "risultato": null
+    },
+    {
+        "squadraCasa": "Rayo Vallecano FC",
+        "squadraTrasferta": "La Resistente Mujeres",
+        "data": "2026-10-15",
+        "ora": "21:00",
+        "campo": "Centro sportivo Aldo Gastaldi",
+        "descrizione": "Test calendario - Giornata 4",
+        "risultato": null
+    }
+]
