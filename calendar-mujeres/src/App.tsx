@@ -1,6 +1,6 @@
 import './App.css'
 import { CalendarButtonList } from './components/CalendarButtonList/CalendarButtonList'
-import { MatchList } from './components/MatchList'
+import { MatchList } from './components/MatchList/MatchList'
 import partite from './data/partite.json'
 
 function App() {

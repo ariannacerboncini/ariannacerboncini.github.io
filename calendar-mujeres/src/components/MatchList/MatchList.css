@@ -1,0 +1,30 @@
+.match-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.match-table th,
+.match-table td {
+    padding: 12px 16px;
+    text-align: left;
+}
+
+.match-table tr {
+    border-bottom: 1px solid #ddd;
+}
+
+/* .match-table tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+} */
+
+.match-table .date-column {
+    width: 35%;
+}
+
+.match-table .match-column {
+    width: 45%;
+}
+
+.match-table .score-column {
+    width: 20%;
+}

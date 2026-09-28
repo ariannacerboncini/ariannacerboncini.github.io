@@ -1,4 +1,4 @@
-import './CalendarButtonList.css'
+import './CalendarButtonList.css';
 import { calendarApps } from "./calendar-apps";
 
 type CalendarButtonListProps = {
