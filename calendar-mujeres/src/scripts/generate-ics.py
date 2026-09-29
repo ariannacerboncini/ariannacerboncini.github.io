@@ -25,8 +25,8 @@ now_utc = datetime.now(timezone.utc)
 
 for partita in data:
     data_ora_string = f"{partita['data']} {partita['ora']}"
-    dtstart = datetime.strptime(data_ora_string, "%Y-%m-%d %H:%M")
-    dtend = dtstart + timedelta(hours = 1)
+    dtstart = f"{datetime.strptime(data_ora_string, '%Y-%m-%d %H:%M')}Z"
+    dtend = f"{dtstart + timedelta(hours = 1)}Z"
 
     summary = f"{partita['squadraCasa']} - {partita['squadraTrasferta']}"
     if partita["risultato"]:
