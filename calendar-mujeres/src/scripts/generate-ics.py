@@ -28,8 +28,8 @@ for partita in data:
     dtstart_naive = datetime.strptime(data_ora_string, "%Y-%m-%d %H:%M")
     dtstart_rome = dtstart_naive.replace(tzinfo=rome_tz)
     dtend_rome = dtstart_rome + timedelta(hours=1)
-    dtstart_utc = dtstart_rome.astimezone(timezone.utc)
-    dtend_utc = dtend_rome.astimezone(timezone.utc)
+    # dtstart_utc = dtstart_rome.astimezone(timezone.utc)
+    # dtend_utc = dtend_rome.astimezone(timezone.utc)
 
     summary = f"{partita['squadraCasa']} - {partita['squadraTrasferta']}"
     if partita["risultato"]:
@@ -38,8 +38,8 @@ for partita in data:
     event = Event()
     event.add("UID", partita['uid'])
     event.add("DTSTAMP", now_utc)
-    event.add("DTSTART", dtstart_utc)
-    event.add("DTEND", dtend_utc)
+    event.add("DTSTART", dtstart_rome)
+    event.add("DTEND", dtend_rome)
     event.add("SUMMARY", summary)
     event.add("DESCRIPTION", partita['descrizione'])
     event.add("LOCATION", partita['campo'])
