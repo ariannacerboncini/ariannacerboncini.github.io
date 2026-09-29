@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta, timezone
+# from zoneinfo import ZoneInfo
 from icalendar import Calendar, Event
 from pathlib import Path
 import json
@@ -19,6 +20,9 @@ calendar.add("X-WR-CALNAME", "La Resistente Mujeres")
 calendar.add("METHOD", "PUBLISH")
 calendar.add("X-WR-TIMEZONE", "Europe/Rome")
 
+# rome_tz = ZoneInfo("Europe/Rome")
+now_utc = datetime.now(timezone.utc)
+
 for partita in data:
     data_ora_string = f"{partita['data']} {partita['ora']}"
     dtstart = datetime.strptime(data_ora_string, "%Y-%m-%d %H:%M")
@@ -26,13 +30,11 @@ for partita in data:
 
     summary = f"{partita['squadraCasa']} - {partita['squadraTrasferta']}"
     if partita["risultato"]:
-        summary += f" ({partita['risultato']['casa']} - {partita['risultato']['trasferta']})"
-
-    dtstamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+        summary += f" ({partita['risultato']['casa']} - {partita['risultato']['trasferta']})"    
 
     event = Event()
     event.add("UID", partita['uid'])
-    event.add("DTSTAMP", dtstamp)
+    event.add("DTSTAMP", now_utc)
     event.add("DTSTART", dtstart)
     event.add("DTEND", dtend)
     event.add("SUMMARY", summary)
