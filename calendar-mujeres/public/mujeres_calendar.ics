@@ -1,5 +1,6 @@
 BEGIN:VCALENDAR
 X-WR-CALNAME:La Resistente Mujeres
+X-WR-TIMEZONE:Europe/Rome
 BEGIN:VEVENT
 SUMMARY:La Resistente Mujeres - Pincopalla (2 - 0)
 DTSTART:20260924T210000
