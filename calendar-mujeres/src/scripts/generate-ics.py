@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from icalendar import Calendar, Event
 from pathlib import Path
 import json
@@ -13,7 +13,10 @@ with open(DATA_FILE, "r", encoding="utf-8") as input_file:
 calendar = Calendar()
 calendar.add("VERSION", "2.0")
 calendar.add("PRODID", "-//La Resistente Mujeres//Calendario Partite//IT")
+calendar.add("CALSCALE", "GREGORIAN")
+calendar.add("X-MICROSOFT-CALSCALE", "GREGORIAN")
 calendar.add("X-WR-CALNAME", "La Resistente Mujeres")
+calendar.add("METHOD", "PUBLISH")
 calendar.add("X-WR-TIMEZONE", "Europe/Rome")
 
 for partita in data:
@@ -25,8 +28,11 @@ for partita in data:
     if partita["risultato"]:
         summary += f" ({partita['risultato']['casa']} - {partita['risultato']['trasferta']})"
 
+    dtstamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+
     event = Event()
     event.add("UID", partita['uid'])
+    event.add("DTSTAMP", dtstamp)
     event.add("DTSTART", dtstart)
     event.add("DTEND", dtend)
     event.add("SUMMARY", summary)
