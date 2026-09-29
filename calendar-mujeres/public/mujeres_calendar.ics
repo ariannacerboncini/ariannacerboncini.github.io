@@ -1,4 +1,6 @@
 BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//La Resistente Mujeres//Calendario Partite//IT
 X-WR-CALNAME:La Resistente Mujeres
 X-WR-TIMEZONE:Europe/Rome
 BEGIN:VEVENT
