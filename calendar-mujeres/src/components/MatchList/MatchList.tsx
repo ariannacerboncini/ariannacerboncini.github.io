@@ -1,5 +1,7 @@
 import './MatchList.css';
 import type { Partita } from "../../types/partita";
+import friendlyIcon from "./icons/friendly.png";
+import leagueIcon from "./icons/league.png";
 
 type MatchListProps = {
     partite: Partita[];
@@ -14,22 +16,23 @@ export function MatchList({ partite }: MatchListProps) {
         });
     };
 
-    const getMatchType = (description: string) => {
+    const getMatchType = (description: string | undefined) => {
+        if (!description) return "";
+
         if (description.startsWith("Amichevole")) {
-            return "friendly";
+            return friendlyIcon;
         }
 
         if (description.startsWith("Campionato UISP")) {
-            return "league";
+            return leagueIcon;
         }
 
-        if (description.startsWith("Coppa")) {
-            return "cup";
-        }
+        // if (description.startsWith("Coppa")) {
+        //     return "cup";
+        // }
 
-        return "other";
-    };
-
+        return "";
+    }; 
 
     return (
         <table className="match-table">
@@ -45,7 +48,7 @@ export function MatchList({ partite }: MatchListProps) {
                 {partite.map((partita) => (
                     <tr>
                         <td>{getWeekday(partita.data)} {partita.data} {partita.ora}</td>
-                        <td>{/* inserire mapping competizione (descrizione) */}{partita.squadraCasa} - {partita.squadraTrasferta}</td>
+                        <td><img className="competition-icon" src={getMatchType(partita.descrizione)} /> {partita.squadraCasa} - {partita.squadraTrasferta}</td>
                         <td>{partita.risultato ? (`${partita.risultato.casa} - ${partita.risultato.trasferta}`) : ''}</td>
                     </tr>
                 ))}

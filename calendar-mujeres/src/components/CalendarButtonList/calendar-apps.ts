@@ -6,14 +6,17 @@ import type { CalendarApp } from "../../types/calendar-app";
 export const calendarApps: CalendarApp[] = [
     {
         name: "Google Calendar",
-        icon: googleIcon
+        icon: googleIcon,
+        url: "https://www.google.com"
     },
     {
         name: "Outlook Calendar",
-        icon: outlookIcon
+        icon: outlookIcon,
+        url: "https://www.outlook.com"
     },
     {
         name: "Apple Calendar",
-        icon: appleIcon
+        icon: appleIcon,
+        url: "https://www.apple.com"
     }
 ];

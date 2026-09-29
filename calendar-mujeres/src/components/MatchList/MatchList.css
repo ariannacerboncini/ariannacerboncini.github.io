@@ -28,3 +28,8 @@
 .match-table .score-column {
     width: 20%;
 }
+
+.competition-icon {
+    width: 16px;
+    height: 16px;
+}
