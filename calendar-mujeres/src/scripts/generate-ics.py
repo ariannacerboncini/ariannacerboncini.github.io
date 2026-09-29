@@ -12,6 +12,7 @@ with open(DATA_FILE, "r", encoding="utf-8") as input_file:
 
 calendar = Calendar()
 calendar.add("X-WR-CALNAME", "La Resistente Mujeres")
+calendar.add("X-WR-TIMEZONE", "Europe/Rome")
 
 for partita in data:
     data_ora_string = f"{partita['data']} {partita['ora']}"
