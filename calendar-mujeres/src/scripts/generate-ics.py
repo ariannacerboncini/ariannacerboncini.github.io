@@ -11,6 +11,8 @@ with open(DATA_FILE, "r", encoding="utf-8") as input_file:
     data=json.load(input_file)
 
 calendar = Calendar()
+calendar.add("VERSION", "2.0")
+calendar.add("PRODID", "-//La Resistente Mujeres//Calendario Partite//IT")
 calendar.add("X-WR-CALNAME", "La Resistente Mujeres")
 calendar.add("X-WR-TIMEZONE", "Europe/Rome")
 
