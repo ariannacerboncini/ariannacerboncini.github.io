@@ -1,0 +1,1 @@
+Applicazione per la creazione di una pagina con il calendario della squadra, con la possibilità di aggiungerlo ai calendari digitali. Aggiornamenti automatici con risultati ed eventuali cambi nelle date e nei luoghi delle partite.
