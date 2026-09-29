@@ -6,8 +6,7 @@ on:
       - main
     paths:
       - 'calendar-mujeres/src/data/partite.json'
-      - 'calendar-mujeres/src/scripts/generate_ics.py'
-      - 'calendar-mujeres/src/scripts/generate.ics.py'
+      - 'calendar-mujeres/src/scripts/generate-ics.py'
       - '.github/workflows/deploy.yml'
 
   # Permette di lanciare la pipeline manualmente da GitHub se necessario
@@ -52,7 +51,7 @@ jobs:
       - name: Run Python script to generate ICS
         working-directory: ./calendar-mujeres
         run: |          
-          python src/scripts/generate_ics.py
+          python src/scripts/generate-ics.py
 
       # 5. Commit e Push del file .ics aggiornato (con [skip ci] per evitare loop)
       - name: Commit and push updated ICS file
