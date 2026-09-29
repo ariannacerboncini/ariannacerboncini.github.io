@@ -32,13 +32,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2. Setup dell'ambiente Python
+     # 2. Set up dell'ambiente Python (senza il controllo di cache obbligatorio)
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'pip'
-          cache-dependency-path: 'calendar-mujeres/requirements.txt'
 
       # 3. Installazione dipendenze Python
       - name: Install Python dependencies
