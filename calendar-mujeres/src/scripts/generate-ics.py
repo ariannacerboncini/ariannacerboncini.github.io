@@ -25,8 +25,11 @@ now_utc = datetime.now(timezone.utc)
 
 for partita in data:
     data_ora_string = f"{partita['data']} {partita['ora']}"
-    dtstart = f"{datetime.strptime(data_ora_string, '%Y-%m-%d %H:%M')}Z"
-    dtend = f"{dtstart}{timedelta(hours = 1)}Z"
+    dtstart = datetime.strptime(data_ora_string, "%Y-%m-%d %H:%M")
+    dtend = dtstart + timedelta(hours = 1)
+
+    dtstart_string = f"{dtstart}Z"
+    dtend_string = f"{dtend}Z"
 
     summary = f"{partita['squadraCasa']} - {partita['squadraTrasferta']}"
     if partita["risultato"]:
@@ -35,8 +38,8 @@ for partita in data:
     event = Event()
     event.add("UID", partita['uid'])
     event.add("DTSTAMP", now_utc)
-    event.add("DTSTART", dtstart)
-    event.add("DTEND", dtend)
+    event.add("DTSTART", dtstart_string)
+    event.add("DTEND", dtend_string)
     event.add("SUMMARY", summary)
     event.add("DESCRIPTION", partita['descrizione'])
     event.add("LOCATION", partita['campo'])
