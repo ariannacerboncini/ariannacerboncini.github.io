@@ -5,7 +5,7 @@ import json
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 DATA_FILE = SCRIPT_DIR.parent / "data" / "partite.json"
-ICS_FILE = SCRIPT_DIR.parent / "data" / "mujeres_calendar.ics"
+ICS_FILE = SCRIPT_DIR.parent.parent / "public" / "mujeres_calendar.ics"
 
 with open(DATA_FILE, "r", encoding="utf-8") as input_file:
     data=json.load(input_file)
