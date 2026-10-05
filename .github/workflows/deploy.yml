@@ -1,25 +1,19 @@
-name: Generate Calendar & Deploy to Pages
+name: Generate Calendars & Deploy to Pages
 
 on:
   push:
     branches:
       - main
-    paths:
-      - 'calendar-mujeres/src/data/partite.json'
-      - 'calendar-mujeres/src/scripts/generate-ics.py'
-      - '.github/workflows/deploy.yml'
 
-  # Permette di lanciare la pipeline manualmente da GitHub se necessario
   workflow_dispatch:
 
-# Permessi necessari sia per salvare il commit del file .ics sia per pubblicare su GitHub Pages
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
 concurrency:
-  group: 'pages'
+  group: pages
   cancel-in-progress: true
 
 jobs:
@@ -31,59 +25,67 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-     # 2. Set up dell'ambiente Python (senza il controllo di cache obbligatorio)
+      # 2. Controlla quali file sono cambiati
+      - name: Check changed files
+        id: changes
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            calendars:
+              - 'calendar-mujeres/src/data/**'
+              - 'calendar-mujeres/src/scripts/**'
+
+      # 3. Set up Python solo se serve
       - name: Set up Python
+        if: steps.changes.outputs.calendars == 'true'
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      # 3. Installazione dipendenze Python
+      # 4. Installazione dipendenze Python solo se serve
       - name: Install Python dependencies
+        if: steps.changes.outputs.calendars == 'true'
         run: |
           python -m pip install --upgrade pip
-          if [ -f calendar-mujeres/requirements.txt ]; then 
+          if [ -f calendar-mujeres/requirements.txt ]; then
             pip install -r calendar-mujeres/requirements.txt
-          else 
+          else
             pip install icalendar
           fi
 
-      # 4. Esecuzione dello script Python per rigenerare l'ICS
-      - name: Run Python script to generate ICS
+      # 5. Generazione degli ICS solo se sono cambiati dati/script
+      - name: Generate calendars
+        if: steps.changes.outputs.calendars == 'true'
         working-directory: ./calendar-mujeres
-        run: |          
+        run: |
           python src/scripts/generate-ics.py
 
-      # 5. Commit e Push del file .ics aggiornato (con [skip ci] per evitare loop)
-      - name: Commit and push updated ICS file
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore: update mujeres_calendar.ics [skip ci]"
-          file_pattern: "calendar-mujeres/public/mujeres_calendar.ics"
-
-      # 6. Setup di Node.js per buildare l'app Vite
+      # 6. Setup Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: npm
           cache-dependency-path: 'calendar-mujeres/package-lock.json'
 
-      # 7. Installazione dipendenze Node e Build dell'app
+      # 7. Build dell'app
       - name: Install Node dependencies and Build
         working-directory: ./calendar-mujeres
         run: |
           npm ci
           npm run build
 
-      # 8. Deploy della cartella dist su GitHub Pages
+      # 8. Setup Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      # 9. Upload
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: './calendar-mujeres/dist'
 
+      # 10. Deploy
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
