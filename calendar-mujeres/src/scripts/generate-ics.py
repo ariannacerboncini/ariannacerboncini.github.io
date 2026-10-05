@@ -4,46 +4,53 @@ from icalendar import Calendar, Event
 from pathlib import Path
 import json
 
-SCRIPT_DIR = Path(__file__).resolve().parent
-DATA_FILE = SCRIPT_DIR.parent / "data" / "partite.json"
-ICS_FILE = SCRIPT_DIR.parent.parent / "public" / "mujeres_calendar.ics"
+from calendars import CALENDARS
 
-with open(DATA_FILE, "r", encoding="utf-8") as input_file:
-    data=json.load(input_file)
-
-calendar = Calendar()
-calendar.add("VERSION", "2.0")
-calendar.add("PRODID", "-//La Resistente Mujeres//Calendario Partite//IT")
-calendar.add("CALSCALE", "GREGORIAN")
-calendar.add("X-MICROSOFT-CALSCALE", "GREGORIAN")
-calendar.add("X-WR-CALNAME", "La Resistente Mujeres")
-calendar.add("METHOD", "PUBLISH")
-calendar.add("X-WR-TIMEZONE", "Europe/Rome")
+# SCRIPT_DIR = Path(__file__).resolve().parent
+# MUJERES_DATA_FILE = SCRIPT_DIR.parent / "data" / "partite.json"
+# MUJERES_ICS_FILE = SCRIPT_DIR.parent.parent / "public" / "mujeres_calendar.ics"
 
 rome_tz = ZoneInfo("Europe/Rome")
-now_utc = datetime.now(timezone.utc)
 
-for partita in data:
-    data_ora_string = f"{partita['data']} {partita['ora']}"
-    dtstart_naive = datetime.strptime(data_ora_string, "%Y-%m-%d %H:%M")
-    dtstart_rome = dtstart_naive.replace(tzinfo=rome_tz)
-    dtend_rome = dtstart_rome + timedelta(hours=1)
-    # dtstart_utc = dtstart_rome.astimezone(timezone.utc)
-    # dtend_utc = dtend_rome.astimezone(timezone.utc)
+def generate_calendar(config):
+    with open(config["data_file"], "r", encoding="utf-8") as input_file:
+        data=json.load(input_file)
 
-    summary = f"{partita['squadraCasa']} - {partita['squadraTrasferta']}"
-    if partita["risultato"]:
-        summary += f" ({partita['risultato']['casa']} - {partita['risultato']['trasferta']})"    
+        calendar = Calendar()
+        calendar.add("VERSION", "2.0")
+        calendar.add("PRODID", f"-//La Resistente {config['name']}//Calendario Partite//IT")
+        calendar.add("CALSCALE", "GREGORIAN")
+        calendar.add("X-MICROSOFT-CALSCALE", "GREGORIAN")
+        calendar.add("X-WR-CALNAME", f"La Resistente {config['name']}")
+        calendar.add("METHOD", "PUBLISH")
+        calendar.add("X-WR-TIMEZONE", "Europe/Rome")
 
-    event = Event()
-    event.add("UID", partita['uid'])
-    event.add("DTSTAMP", now_utc)
-    event.add("DTSTART", dtstart_rome)
-    event.add("DTEND", dtend_rome)
-    event.add("SUMMARY", summary)
-    event.add("DESCRIPTION", partita['descrizione'])
-    event.add("LOCATION", partita['campo'])
-    calendar.add_component(event)
+        now_utc = datetime.now(timezone.utc)
 
-with open(ICS_FILE, "wb") as output_file:
-    output_file.write(calendar.to_ical())
+        for partita in data:
+            data_ora_string = f"{partita['data']} {partita['ora']}"
+            dtstart_naive = datetime.strptime(data_ora_string, "%Y-%m-%d %H:%M")
+            dtstart_rome = dtstart_naive.replace(tzinfo=rome_tz)
+            dtend_rome = dtstart_rome + timedelta(hours=1)
+            # dtstart_utc = dtstart_rome.astimezone(timezone.utc)
+            # dtend_utc = dtend_rome.astimezone(timezone.utc)
+
+            summary = f"{partita['squadraCasa']} - {partita['squadraTrasferta']}"
+            if partita["risultato"]:
+                summary += f" ({partita['risultato']['casa']} - {partita['risultato']['trasferta']})"    
+
+            event = Event()
+            event.add("UID", partita['uid'])
+            event.add("DTSTAMP", now_utc)
+            event.add("DTSTART", dtstart_rome)
+            event.add("DTEND", dtend_rome)
+            event.add("SUMMARY", summary)
+            event.add("DESCRIPTION", partita['descrizione'])
+            event.add("LOCATION", partita['campo'])
+            calendar.add_component(event)
+
+        with open(config["ics_file"], "wb") as output_file:
+            output_file.write(calendar.to_ical())
+
+for config in CALENDARS:
+    generate_calendar(config)

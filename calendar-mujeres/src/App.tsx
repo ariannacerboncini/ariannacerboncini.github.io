@@ -1,31 +1,33 @@
+import { useState } from 'react';
 import './App.css'
-import { CalendarButtonList } from './components/CalendarButtonList/CalendarButtonList'
-import { MatchList } from './components/MatchList/MatchList'
-import partite from './data/partite.json'
+import { CalendarSelector } from './components/CalendarSelector/CalendarSelector';
+import { SquadPage } from './components/SquadPage/SquadPage';
+import { calendars } from './config/calendars';
+import type { Calendar } from './types/calendar';
 
 function App() {
 
+  const [selectedCalendar, setSelectedCalendar] = useState<Calendar | null>(null);
+
   return (
     <>
-      <section>
-        <div>
-          <h1>Calendario La Resistente Mujeres</h1>
-          <p>
-            Usa questa pagina per aggiungere le partite delle Mujeres al tuo calendario digitale, o per consultare le partite della stagione.
-          </p>
-        </div>        
-      </section>
+      {selectedCalendar ? (
+        <>
+          <button onClick={() => setSelectedCalendar(null)}>
+            Torna alla selezione calendari
+          </button>
+          <SquadPage selectedCalendar={selectedCalendar} />
+        </>
+      ) : (
 
-      <section>
-        <CalendarButtonList />
-      </section>
-
-      <section>
-        <MatchList partite={partite}/>
-      </section>
-
+        <CalendarSelector
+          calendars={calendars}
+          onSelect={setSelectedCalendar}
+        />
+      )
+      }
     </>
-  )
+  );
 }
 
 export default App
