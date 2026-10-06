@@ -10,7 +10,7 @@ export const calendars: Calendar[] = [
         description:
             "Usa questa pagina per aggiungere le partite della prima squadra al tuo calendario digitale, o per consultare le partite della stagione.",
         icsUrl:
-            "https://ariannacerboncini.github.io/calendar-mujeres/calendars/resistente_figc_calendar.ics",
+            "https://ariannacerboncini.github.io/calendars/resistente_figc_calendar.ics",
         partite: figc,
     },
     {
@@ -20,7 +20,7 @@ export const calendars: Calendar[] = [
         description:
             "Usa questa pagina per aggiungere le partite delle Mujeres al tuo calendario digitale, o per consultare le partite della stagione.",
         icsUrl:
-            "https://ariannacerboncini.github.io/calendar-mujeres/calendars/resistente_mujeres_calendar.ics",
+            "https://ariannacerboncini.github.io/calendars/resistente_mujeres_calendar.ics",
         partite: mujeres,
     },
 ];
