@@ -1,7 +1,6 @@
 import './MatchList.css';
 import type { Partita } from "../../types/partita";
-import friendlyIcon from "./icons/friendly.png";
-import leagueIcon from "./icons/league.png";
+import { AmichevoleIcon, CalcioEMartelloIcon, CampionatoIcon, CoppaIcon } from './icons/competition-icons';
 
 type MatchListProps = {
     partite: Partita[];
@@ -20,16 +19,20 @@ export function MatchList({ partite }: MatchListProps) {
         if (!description) return "";
 
         if (description.startsWith("Amichevole")) {
-            return friendlyIcon;
+            return AmichevoleIcon;
         }
 
-        if (description.startsWith("Campionato UISP")) {
-            return leagueIcon;
+        if (description.startsWith("Campionato")) {
+            return CampionatoIcon;
         }
 
-        // if (description.startsWith("Coppa")) {
-        //     return "cup";
-        // }
+        if (description.startsWith("Coppa")) {
+            return CoppaIcon;
+        }
+
+        if (description.startsWith("Calcio e Martello")) {
+            return CalcioEMartelloIcon;
+        }
 
         return "";
     }; 

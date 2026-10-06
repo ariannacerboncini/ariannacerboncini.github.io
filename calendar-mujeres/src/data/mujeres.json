@@ -8,5 +8,185 @@
         "campo": "Scuola calcio Internazionale Genova",
         "descrizione": "Amichevole",
         "risultato": null
+    },
+    {
+        "uid": "resistente@mujeres-r351573n7347l37150c14l1571-001",
+        "squadraCasa": "La Resistente Mujeres",
+        "squadraTrasferta": "Atletico Levante",
+        "data": "2026-10-28",
+        "ora": "21:00",
+        "campo": "Campo sportivo Ex Corderia",
+        "descrizione": "Campionato UISP - Giornata 1",
+        "risultato": null
+    },
+    {
+        "uid": "resistente@mujeres-r351573n7347l37150c14l1571-002",
+        "squadraCasa": "SAVE Tabaccheria Baracca",
+        "squadraTrasferta": "La Resistente Mujeres",
+        "data": "2026-11-02",
+        "ora": "21:00",
+        "campo": "",
+        "descrizione": "Campionato UISP - Giornata 2",
+        "risultato": null
+    },
+    {
+        "uid": "resistente@mujeres-r351573n7347l37150c14l1571-003",
+        "squadraCasa": "Sangio",
+        "squadraTrasferta": "La Resistente Mujeres",
+        "data": "2026-11-09",
+        "ora": "21:00",
+        "campo": "Società Operaia Cattolica San Giovanni",
+        "descrizione": "Campionato UISP - Giornata 3",
+        "risultato": null
+    },
+    {
+        "uid": "resistente@mujeres-r351573n7347l37150c14l1571-004",
+        "squadraCasa": "La Resistente Mujeres",
+        "squadraTrasferta": "ASD CF Superba-Multedo",
+        "data": "2026-11-18",
+        "ora": "21:00",
+        "campo": "Campo sportivo Ex Corderia",
+        "descrizione": "Campionato UISP - Giornata 4",
+        "risultato": null
+    },
+    {
+        "uid": "resistente@mujeres-r351573n7347l37150c14l1571-005",
+        "squadraCasa": "CUS Genova ASD",
+        "squadraTrasferta": "La Resistente Mujeres",
+        "data": "2026-11-23",
+        "ora": "21:00",
+        "campo": "Scuola calcio Internazionale Genova",
+        "descrizione": "Campionato UISP - Giornata 5",
+        "risultato": null
+    },
+    {
+        "uid": "resistente@mujeres-r351573n7347l37150c14l1571-006",
+        "squadraCasa": "La Resistente Mujeres",
+        "squadraTrasferta": "Pincopalla",
+        "data": "2026-12-02",
+        "ora": "21:00",
+        "campo": "Campo sportivo Ex Corderia",
+        "descrizione": "Campionato UISP - Giornata 6",
+        "risultato": null
+    },
+    {
+        "uid": "resistente@mujeres-r351573n7347l37150c14l1571-007",
+        "squadraCasa": "Rayo Vallecano F.C.",
+        "squadraTrasferta": "La Resistente Mujeres",
+        "data": "2026-12-14",
+        "ora": "21:00",
+        "campo": "Centro sportivo Aldo Gastaldi",
+        "descrizione": "Campionato UISP - Giornata 7",
+        "risultato": null
+    },
+    {
+        "uid": "resistente@mujeres-r351573n7347l37150c14l1571-008",
+        "squadraCasa": "La Resistente Mujeres",
+        "squadraTrasferta": "Vaze SSD ARL",
+        "data": "2027-01-13",
+        "ora": "21:00",
+        "campo": "Campo sportivo Ex Corderia",
+        "descrizione": "Campionato UISP - Giornata 8",
+        "risultato": null
+    },
+    {
+        "uid": "resistente@mujeres-r351573n7347l37150c14l1571-009",
+        "squadraCasa": "ASD San Pietro Girls",
+        "squadraTrasferta": "La Resistente Mujeres",
+        "data": "2027-01-18",
+        "ora": "21:00",
+        "campo": "",
+        "descrizione": "Campionato UISP - Giornata 9",
+        "risultato": null
+    },
+    {
+        "uid": "resistente@mujeres-r351573n7347l37150c14l1571-010",
+        "squadraCasa": "Atletico Levante",
+        "squadraTrasferta": "La Resistente Mujeres",
+        "data": "2027-02-01",
+        "ora": "21:00",
+        "campo": "Cooperativa Sociale Maria Luigia Societa' Cooperativa A Responsabilita, Chiavari",
+        "descrizione": "Campionato UISP - Giornata 10",
+        "risultato": null
+    },
+    {
+        "uid": "resistente@mujeres-r351573n7347l37150c14l1571-011",
+        "squadraCasa": "La Resistente Mujeres",
+        "squadraTrasferta": "SAVE Tabaccheria Baracca",
+        "data": "2027-02-10",
+        "ora": "21:00",
+        "campo": "Campo sportivo Ex Corderia",
+        "descrizione": "Campionato UISP - Giornata 11",
+        "risultato": null
+    },
+    {
+        "uid": "resistente@mujeres-r351573n7347l37150c14l1571-012",
+        "squadraCasa": "La Resistente Mujeres",
+        "squadraTrasferta": "Sangio",
+        "data": "2027-02-17",
+        "ora": "21:00",
+        "campo": "Campo sportivo Ex Corderia",
+        "descrizione": "Campionato UISP - Giornata 12",
+        "risultato": null
+    },
+    {
+        "uid": "resistente@mujeres-r351573n7347l37150c14l1571-013",
+        "squadraCasa": "ASD CF Superba-Multedo",
+        "squadraTrasferta": "La Resistente Mujeres",
+        "data": "2027-03-01",
+        "ora": "21:00",
+        "campo": "Campo sportivo Ex Corderia",
+        "descrizione": "Campionato UISP - Giornata 13",
+        "risultato": null
+    },
+    {
+        "uid": "resistente@mujeres-r351573n7347l37150c14l1571-014",
+        "squadraCasa": "La Resistente Mujeres",
+        "squadraTrasferta": "CUS Genova ASD",
+        "data": "2027-03-10",
+        "ora": "21:00",
+        "campo": "Campo sportivo Ex Corderia",
+        "descrizione": "Campionato UISP - Giornata 14",
+        "risultato": null
+    },
+    {
+        "uid": "resistente@mujeres-r351573n7347l37150c14l1571-015",
+        "squadraCasa": "Pincopalla",
+        "squadraTrasferta": "La Resistente Mujeres",
+        "data": "2027-03-15",
+        "ora": "21:00",
+        "campo": "Campo sportivo Ex Corderia",
+        "descrizione": "Campionato UISP - Giornata 15",
+        "risultato": null
+    },
+    {
+        "uid": "resistente@mujeres-r351573n7347l37150c14l1571-016",
+        "squadraCasa": "La Resistente Mujeres",
+        "squadraTrasferta": "Rayo Vallecano F.C.",
+        "data": "2027-03-24",
+        "ora": "21:00",
+        "campo": "Campo sportivo Ex Corderia",
+        "descrizione": "Campionato UISP - Giornata 16",
+        "risultato": null
+    },
+    {
+        "uid": "resistente@mujeres-r351573n7347l37150c14l1571-017",
+        "squadraCasa": "Vaze SSD ARL",
+        "squadraTrasferta": "La Resistente Mujeres",
+        "data": "2027-04-05",
+        "ora": "21:00",
+        "campo": "Centro Sportivo Piani d'Invrea, Varazze",
+        "descrizione": "Campionato UISP - Giornata 17",
+        "risultato": null
+    },
+    {
+        "uid": "resistente@mujeres-r351573n7347l37150c14l1571-018",
+        "squadraCasa": "La Resistente Mujeres",
+        "squadraTrasferta": "ASD San Pietro Girls",
+        "data": "2027-04-14",
+        "ora": "21:00",
+        "campo": "Campo sportivo Ex Corderia",
+        "descrizione": "Campionato UISP - Giornata 18",
+        "risultato": null
     }
 ]

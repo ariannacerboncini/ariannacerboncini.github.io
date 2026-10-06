@@ -10,8 +10,8 @@ type SquadPageProps = {
 export function SquadPage({ selectedCalendar }: SquadPageProps) {
 
     return (
-        <>
-            <section>
+        <div className="app-page">
+            <section className="app-header">
                 <div>
                     <h1>{selectedCalendar.title}</h1>
                     <p>
@@ -30,6 +30,6 @@ export function SquadPage({ selectedCalendar }: SquadPageProps) {
             <section>
                 <MatchList partite={selectedCalendar.partite} />
             </section>
-        </>
+        </div>
     );
 }

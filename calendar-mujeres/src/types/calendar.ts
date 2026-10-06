@@ -4,6 +4,7 @@ export type Calendar = {
     id: string;
     name: string;
     title: string;
+    subtitle?: string;
     description: string;
     icsUrl: string;
     partite: Partita[];
