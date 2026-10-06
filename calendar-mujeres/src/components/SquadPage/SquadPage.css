@@ -7,6 +7,7 @@
 
   cursor: pointer;
 
+  color: var(--text-h);
   font: inherit;
 }
 
@@ -19,3 +20,9 @@
   margin-left: -2rem;
 }
 
+@media (max-width: 700px) {
+    .match-list-section {
+        width: 100%;
+        margin-left: 0;
+    }
+}

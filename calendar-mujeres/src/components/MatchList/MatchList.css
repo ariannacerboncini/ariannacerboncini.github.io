@@ -1,6 +1,7 @@
 .match-table {
     width: 100%;
     border-collapse: collapse;
+    table-layout: fixed;
 }
 
 .match-table th,
@@ -18,7 +19,6 @@
     border-bottom: none;
 }
 
-/* Striping */
 .match-table tbody tr:nth-child(even) {
     background-color: var(--code-bg);
 }
@@ -39,6 +39,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    min-width: 0;
 }
 
 .competition-icon-container {
@@ -52,4 +53,114 @@
     width: 20px;
     height: 20px;
     display: block;
+}
+
+.teams {
+    min-width: 0;
+}
+
+.mobile-score {
+    display: none;
+}
+
+@media (max-width: 700px) {
+
+    .match-table {
+        table-layout: auto;
+        width: 100%;
+    }
+
+    .match-table thead {
+        display: block;
+    }
+
+    .match-table thead tr {
+        display: block;
+        padding: 0 0.75rem 0.5rem;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .match-table thead th {
+        display: none;
+    }
+
+    .match-table thead .date-column,
+    .match-table thead .match-column {
+        display: block;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--text-h);
+        line-height: 1.4;
+    }
+
+    .match-table,
+    .match-table tbody,
+    .match-table tr,
+    .match-table td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .match-table tr {
+        position: relative;
+        padding: 0.9rem 0;
+    }
+
+    .match-table td {
+        padding: 0 0.75rem;
+    }
+
+    .date-cell {
+        padding-right: 2rem !important;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+    }
+
+    .match-cell {
+        margin-top: 0.25rem;
+        min-width: 0;
+    }
+
+    .match-content {
+        display: flex;
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .teams {
+        flex: 1 1 auto;
+        min-width: 0;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .mobile-score {
+        display: inline;
+        margin-left: 0.35rem;
+        white-space: nowrap;
+    }
+
+    .score-cell {
+        display: none !important;
+    }
+
+    .match-cell .competition-icon-container {
+        position: absolute;
+        top: 0.9rem;
+        right: 0.75rem;
+    }
+
+    .competition-icon {
+        width: 18px;
+        height: 18px;
+    }
 }

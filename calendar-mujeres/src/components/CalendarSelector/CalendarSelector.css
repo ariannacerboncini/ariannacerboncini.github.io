@@ -24,6 +24,7 @@
     padding: 1.5rem;
     text-align: left;
     
+    color: var(--text-h);
     background-color: var(--accent);
     border: none;
     border-radius: .3rem;

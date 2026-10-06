@@ -78,11 +78,11 @@ export function MatchList({ partite }: MatchListProps) {
 
                     return (
                         <tr key={`${partita.data}-${partita.ora}-${partita.squadraCasa}-${partita.squadraTrasferta}`}>
-                            <td>
+                            <td className="date-cell">
                                 {getWeekday(partita.data)} {partita.data} {partita.ora}
                             </td>
 
-                            <td>
+                            <td className="match-cell">
                                 <span className="match-content">
                                     {matchType && (
                                         <span
@@ -97,13 +97,19 @@ export function MatchList({ partite }: MatchListProps) {
                                         </span>
                                     )}
 
-                                    <span>
+                                    <span className="teams">
                                         {partita.squadraCasa} - {partita.squadraTrasferta}
+
+                                        {partita.risultato && (
+                                            <span className="mobile-score">
+                                                ({partita.risultato.casa} - {partita.risultato.trasferta})
+                                            </span>
+                                        )}
                                     </span>
                                 </span>
                             </td>
 
-                            <td>
+                            <td className="score-cell">
                                 {partita.risultato
                                     ? `${partita.risultato.casa} - ${partita.risultato.trasferta}`
                                     : ''
