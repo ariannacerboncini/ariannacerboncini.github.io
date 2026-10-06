@@ -7,9 +7,6 @@
         "ora": "21:00",
         "campo": "Scuola calcio Internazionale Genova",
         "descrizione": "Amichevole",
-        "risultato": {
-            "casa": 1,
-            "trasferta": 2
-        }
+        "risultato": null
     }
 ]
