@@ -6,10 +6,6 @@ import json
 
 from calendars import CALENDARS
 
-# SCRIPT_DIR = Path(__file__).resolve().parent
-# MUJERES_DATA_FILE = SCRIPT_DIR.parent / "data" / "partite.json"
-# MUJERES_ICS_FILE = SCRIPT_DIR.parent.parent / "public" / "mujeres_calendar.ics"
-
 rome_tz = ZoneInfo("Europe/Rome")
 
 def generate_calendar(config):
