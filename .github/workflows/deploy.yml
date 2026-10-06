@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-
   workflow_dispatch:
 
 permissions:
@@ -21,9 +20,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Download del repository
+      # 1. Download del repository (fetch-depth: 0 permette a paths-filter di confrontare i commit)
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       # 2. Controlla quali file sono cambiati
       - name: Check changed files
@@ -35,16 +36,16 @@ jobs:
               - 'calendar-mujeres/src/data/**'
               - 'calendar-mujeres/src/scripts/**'
 
-      # 3. Set up Python solo se serve
+      # 3. Set up Python solo se sono cambiati i file del calendario o se è un'esecuzione manuale
       - name: Set up Python
-        if: steps.changes.outputs.calendars == 'true'
+        if: steps.changes.outputs.calendars == 'true' || github.event_name == 'workflow_dispatch'
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      # 4. Installazione dipendenze Python solo se serve
+      # 4. Installazione dipendenze Python
       - name: Install Python dependencies
-        if: steps.changes.outputs.calendars == 'true'
+        if: steps.changes.outputs.calendars == 'true' || github.event_name == 'workflow_dispatch'
         run: |
           python -m pip install --upgrade pip
           if [ -f calendar-mujeres/requirements.txt ]; then
@@ -53,14 +54,14 @@ jobs:
             pip install icalendar
           fi
 
-      # 5. Generazione degli ICS solo se sono cambiati dati/script
+      # 5. Generazione degli ICS
       - name: Generate calendars
-        if: steps.changes.outputs.calendars == 'true'
+        if: steps.changes.outputs.calendars == 'true' || github.event_name == 'workflow_dispatch'
         working-directory: ./calendar-mujeres
         run: |
           python src/scripts/generate-ics.py
 
-      # 6. Setup Node.js
+      # 6. Setup Node.js (sempre attivo ad ogni commit)
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -68,7 +69,7 @@ jobs:
           cache: npm
           cache-dependency-path: 'calendar-mujeres/package-lock.json'
 
-      # 7. Build dell'app
+      # 7. Build dell'app React (include i file .ics se salvati in public/)
       - name: Install Node dependencies and Build
         working-directory: ./calendar-mujeres
         run: |
@@ -85,7 +86,7 @@ jobs:
         with:
           path: './calendar-mujeres/dist'
 
-      # 10. Deploy
+      # 10. Deploy su GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
