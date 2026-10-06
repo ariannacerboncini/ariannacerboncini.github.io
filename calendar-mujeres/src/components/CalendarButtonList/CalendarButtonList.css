@@ -1,7 +1,7 @@
 .calendar-app-buttons {
     display: flex;
     gap: 16px;
-    margin: 24px 0;
+    margin: 2rem 0;
 }
 
 .calendar-app-button {
@@ -17,7 +17,7 @@
     padding: 12px;
     box-sizing: border-box;
     background: var(--bg);
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
     border-radius: 12px;
     color: var(--text-h);
     text-decoration: none;
@@ -28,6 +28,7 @@
 .calendar-app-button:hover {
     border-color: var(--accent-border);
     box-shadow: var(--shadow);
+    transform: translateY(-3px);
 }
 
 .calendar-app-icon {

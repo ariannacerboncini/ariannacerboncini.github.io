@@ -12,11 +12,8 @@ function App() {
   return (
     <>
       {selectedCalendar ? (
-        <>
-          <button onClick={() => setSelectedCalendar(null)}>
-            Torna alla selezione calendari
-          </button>
-          <SquadPage selectedCalendar={selectedCalendar} />
+        <>          
+          <SquadPage selectedCalendar={selectedCalendar} onBack={() => setSelectedCalendar(null)} />
         </>
       ) : (
 

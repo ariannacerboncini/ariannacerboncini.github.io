@@ -1,0 +1,21 @@
+.back-button {
+  margin: 0 0 1rem;
+  padding: 0;
+
+  background: none;
+  border: none;
+
+  cursor: pointer;
+
+  font: inherit;
+}
+
+.back-button:hover {
+  color: var(--text);
+}
+
+.match-list-section {
+  width: calc(100% + 10rem);
+  margin-left: -2rem;
+}
+
