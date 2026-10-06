@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write    # PERMESSO DI SCRITTURA NECESSARIO PER IL GIT PUSH
   pages: write
   id-token: write
 
@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Download del repository (fetch-depth: 0 permette a paths-filter di confrontare i commit)
+      # 1. Download del repository
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
@@ -36,7 +36,7 @@ jobs:
               - 'calendar-mujeres/src/data/**'
               - 'calendar-mujeres/src/scripts/**'
 
-      # 3. Set up Python solo se sono cambiati i file del calendario o se è un'esecuzione manuale
+      # 3. Set up Python
       - name: Set up Python
         if: steps.changes.outputs.calendars == 'true' || github.event_name == 'workflow_dispatch'
         uses: actions/setup-python@v5
@@ -61,7 +61,22 @@ jobs:
         run: |
           python src/scripts/generate-ics.py
 
-      # 6. Setup Node.js (sempre attivo ad ogni commit)
+      # 6. Commit e push ICS (eseguito solo se gli ICS sono stati rigenerati)
+      - name: Commit and push generated .ics files
+        if: steps.changes.outputs.calendars == 'true' || github.event_name == 'workflow_dispatch'
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add calendar-mujeres/public/calendars/*.ics calendars/*.ics 2>/dev/null || true
+          git add .
+          if git diff --staged --quiet; then
+            echo "Nessun cambiamento nei file .ics da committare."
+          else
+            git commit -m "chore: update generated .ics calendar files [skip ci]"
+            git push
+          fi
+
+      # 7. Setup Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -69,24 +84,24 @@ jobs:
           cache: npm
           cache-dependency-path: 'calendar-mujeres/package-lock.json'
 
-      # 7. Build dell'app React (include i file .ics se salvati in public/)
+      # 8. Build dell'app React
       - name: Install Node dependencies and Build
         working-directory: ./calendar-mujeres
         run: |
           npm ci
           npm run build
 
-      # 8. Setup Pages
+      # 9. Setup Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # 9. Upload
+      # 10. Upload Artifact
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: './calendar-mujeres/dist'
 
-      # 10. Deploy su GitHub Pages
+      # 11. Deploy su GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
