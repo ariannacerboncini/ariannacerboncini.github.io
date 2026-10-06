@@ -1,7 +1,6 @@
 from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 from icalendar import Calendar, Event
-from pathlib import Path
 import json
 
 from calendars import CALENDARS
@@ -44,6 +43,8 @@ def generate_calendar(config):
             event.add("DESCRIPTION", partita['descrizione'])
             event.add("LOCATION", partita['campo'])
             calendar.add_component(event)
+
+        calendar.add_missing_timezones()
 
         with open(config["ics_file"], "wb") as output_file:
             output_file.write(calendar.to_ical())
