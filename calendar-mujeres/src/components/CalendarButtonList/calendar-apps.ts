@@ -1,15 +1,20 @@
 import googleIcon from "./icons/google-calendar.svg";
 import outlookIcon from "./icons/outlook.svg";
 import appleIcon from "./icons/apple-calendar.svg";
+import calendarIcon from "./icons/generic-calendar.svg";
 
 import type { CalendarApp } from "../../types/calendar-app";
+
+function getWebcalUrl(icsUrl: string): string {
+    return icsUrl.replace(/^https?:\/\//, "webcal://");
+}
 
 export function getCalendarApps(
     icsUrl: string,
     calendarName: string
 ): CalendarApp[] {
 
-    const webcalUrl = icsUrl.replace(/^https?:\/\//, "webcal://");
+    const webcalUrl = getWebcalUrl(icsUrl);
 
     const googleCalendarUrl =
         `https://calendar.google.com/calendar/render?cid=${encodeURIComponent(webcalUrl)}`;
@@ -34,4 +39,12 @@ export function getCalendarApps(
             url: webcalUrl
         }
     ];
+}
+
+export function getMobileCalendarApp(icsUrl: string) {
+    return {
+        name: "Aggiungi al calendario",
+        icon: calendarIcon,
+        url: getWebcalUrl(icsUrl)
+    };
 }

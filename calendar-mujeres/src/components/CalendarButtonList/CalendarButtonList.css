@@ -37,6 +37,21 @@
     object-fit: contain;
 }
 
+.calendar-mobile-button {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .calendar-app-buttons {
+        display: none;
+    }
+
+    .calendar-mobile-button {
+        display: flex;
+    margin: 2rem 0;
+    }
+}
+
 @media (max-width: 700px) {
     .calendar-app-buttons {
         flex-direction: column;
