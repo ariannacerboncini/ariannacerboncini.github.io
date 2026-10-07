@@ -7,7 +7,10 @@
         "ora": "21:00",
         "campo": "Scuola calcio Internazionale Genova",
         "descrizione": "Amichevole",
-        "risultato": null
+        "risultato": {
+            "casa": 3,
+            "trasferta": 3
+        }
     },
     {
         "uid": "resistente@mujeres-r351573n7347l37150c14l1571-001",
