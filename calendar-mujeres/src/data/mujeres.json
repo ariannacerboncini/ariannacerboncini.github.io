@@ -191,5 +191,15 @@
         "campo": "Campo sportivo Ex Corderia",
         "descrizione": "Campionato UISP - Giornata 18",
         "risultato": null
+    },
+    {
+        "uid": "resistente@mujeres-r351573n7347l37150c14l1571-019",
+        "squadraCasa": "Rayo Vallecano F.C.",
+        "squadraTrasferta": "La Resistente Mujeres",
+        "data": "2026-10-21",
+        "ora": "21:00",
+        "campo": "Scuola calcio Internazionale Genova",
+        "descrizione": "Amichevole",
+        "risultato": null
     }
 ]
