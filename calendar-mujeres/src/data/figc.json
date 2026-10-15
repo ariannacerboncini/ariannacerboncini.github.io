@@ -85,7 +85,10 @@
         "ora": "14:30",
         "campo": "Impianto sportivo Mauro Morgavi",
         "descrizione": "Campionato Seconda Categoria - Giornata 1",
-        "risultato": null
+        "risultato": {
+            "casa": 4,
+            "trasferta": 0
+        }
     },
     {
         "uid": "resistente@figc-r351573n7347l37150c14l1571-007",
@@ -112,7 +115,7 @@
         "squadraCasa": "Casellese",
         "squadraTrasferta": "La Resistente",
         "data": "2026-10-31",
-        "ora": "15:00",
+        "ora": "14:30",
         "campo": "Campo sportivo comunale, Casella",
         "descrizione": "Campionato Seconda Categoria - Giornata 4",
         "risultato": null
@@ -132,7 +135,7 @@
         "squadraCasa": "San Teodoro Ketzmaja",
         "squadraTrasferta": "La Resistente",
         "data": "2026-11-14",
-        "ora": "15:00",
+        "ora": "14:30",
         "campo": "Impianto sportivo Mauro Morgavi",
         "descrizione": "Campionato Seconda Categoria - Giornata 6",
         "risultato": null
@@ -152,7 +155,7 @@
         "squadraCasa": "Alta Val D'Orba",
         "squadraTrasferta": "La Resistente",
         "data": "2026-11-28",
-        "ora": "15:00",
+        "ora": "14:30",
         "campo": "Campo Sportivo Comunale Oliveri Luigi e Pasquale, Campo Ligure",
         "descrizione": "Campionato Seconda Categoria - Giornata 8",
         "risultato": null
@@ -172,7 +175,7 @@
         "squadraCasa": "Andrea D'Oria",
         "squadraTrasferta": "La Resistente",
         "data": "2026-12-12",
-        "ora": "15:00",
+        "ora": "13:15",
         "campo": "Campo sportivo Monsignor Erasmo Sanguineti",
         "descrizione": "Campionato Seconda Categoria - Giornata 10",
         "risultato": null
@@ -212,7 +215,7 @@
         "squadraCasa": "Campo Ligure Il Borgo",
         "squadraTrasferta": "La Resistente",
         "data": "2027-01-23",
-        "ora": "15:00",
+        "ora": "15:30",
         "campo": "Campo Sportivo Comunale Oliveri Luigi e Pasquale, Campo Ligure",
         "descrizione": "Campionato Seconda Categoria - Giornata 14",
         "risultato": null
@@ -232,7 +235,7 @@
         "squadraCasa": "Castagna 2023",
         "squadraTrasferta": "La Resistente",
         "data": "2027-02-06",
-        "ora": "15:00",
+        "ora": "14:30",
         "campo": "Campo sportivo Monsignor Erasmo Sanguineti",
         "descrizione": "Campionato Seconda Categoria - Giornata 16",
         "risultato": null
@@ -252,7 +255,7 @@
         "squadraCasa": "Virtus Albaro",
         "squadraTrasferta": "La Resistente",
         "data": "2027-02-20",
-        "ora": "15:00",
+        "ora": "14:30",
         "campo": "Campo sportivo calcio - Genova, San Desiderio",
         "descrizione": "Campionato Seconda Categoria - Giornata 18",
         "risultato": null
@@ -272,7 +275,7 @@
         "squadraCasa": "Goliardica Genovese 1967",
         "squadraTrasferta": "La Resistente",
         "data": "2027-03-06",
-        "ora": "15:00",
+        "ora": "14:30",
         "campo": "Sport Club Molassana Boero",
         "descrizione": "Campionato Seconda Categoria - Giornata 20",
         "risultato": null
@@ -292,7 +295,7 @@
         "squadraCasa": "Crocefieschi 2017",
         "squadraTrasferta": "La Resistente",
         "data": "2027-03-20",
-        "ora": "15:00",
+        "ora": "18:30",
         "campo": "Busalla Calcio, Busalla",
         "descrizione": "Campionato Seconda Categoria - Giornata 22",
         "risultato": null
@@ -312,7 +315,7 @@
         "squadraCasa": "Borgoratti",
         "squadraTrasferta": "La Resistente",
         "data": "2027-04-10",
-        "ora": "15:00",
+        "ora": "14:30",
         "campo": "Campo da calcio Giuseppe Vallebona",
         "descrizione": "Campionato Seconda Categoria - Giornata 24",
         "risultato": null
@@ -332,7 +335,7 @@
         "squadraCasa": "Ponente F.C.",
         "squadraTrasferta": "La Resistente",
         "data": "2027-04-24",
-        "ora": "15:00",
+        "ora": "14:30",
         "campo": "Sestrese Campo Sportivo Giuseppe Piccardo",
         "descrizione": "Campionato Seconda Categoria - Giornata 26",
         "risultato": null
