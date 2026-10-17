@@ -98,7 +98,10 @@
         "ora": "15:00",
         "campo": "Campo sportivo Bruno Bacigalupo, Mele",
         "descrizione": "Campionato Seconda Categoria - Giornata 2",
-        "risultato": null
+        "risultato": {
+            "casa": 0,
+            "trasferta": 3
+        }
     },
     {
         "uid": "resistente@figc-r351573n7347l37150c14l1571-008",
