@@ -111,7 +111,10 @@
         "ora": "14:30",
         "campo": "Impianto sportivo Mauro Morgavi",
         "descrizione": "Campionato Seconda Categoria - Giornata 3",
-        "risultato": null
+        "risultato": {
+            "casa": 3,
+            "trasferta": 0
+        }
     },
     {
         "uid": "resistente@figc-r351573n7347l37150c14l1571-009",
