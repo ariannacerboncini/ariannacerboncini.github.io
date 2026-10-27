@@ -20,7 +20,10 @@
         "ora": "21:00",
         "campo": "Campo sportivo Ex Corderia",
         "descrizione": "Campionato UISP - Giornata 1",
-        "risultato": null
+        "risultato": {
+            "casa": 1,
+            "trasferta": 2
+        }
     },
     {
         "uid": "resistente@mujeres-r351573n7347l37150c14l1571-002",
