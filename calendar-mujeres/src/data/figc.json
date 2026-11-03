@@ -124,7 +124,10 @@
         "ora": "14:30",
         "campo": "Campo sportivo comunale, Casella",
         "descrizione": "Campionato Seconda Categoria - Giornata 4",
-        "risultato": null
+        "risultato": "risultato": {
+            "casa": 1,
+            "trasferta": 2
+        }
     },
     {
         "uid": "resistente@figc-r351573n7347l37150c14l1571-010",
