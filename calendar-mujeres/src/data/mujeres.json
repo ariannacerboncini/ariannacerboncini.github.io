@@ -33,7 +33,10 @@
         "ora": "21:00",
         "campo": "Centro sportivo Aldo Gastaldi",
         "descrizione": "Campionato UISP - Giornata 2",
-        "risultato": null
+        "risultato": {
+            "casa": 6,
+            "trasferta": 0
+        }
     },
     {
         "uid": "resistente@mujeres-r351573n7347l37150c14l1571-003",
