@@ -137,7 +137,10 @@
         "ora": "14:30",
         "campo": "Impianto sportivo Mauro Morgavi",
         "descrizione": "Campionato Seconda Categoria - Giornata 5",
-        "risultato": null
+        "risultato": {
+            "casa": 3,
+            "trasferta": 1
+        }
     },
     {
         "uid": "resistente@figc-r351573n7347l37150c14l1571-011",
