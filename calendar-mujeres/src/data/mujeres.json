@@ -59,7 +59,10 @@
         "ora": "21:00",
         "campo": "Campo sportivo Ex Corderia",
         "descrizione": "Campionato UISP - Giornata 4",
-        "risultato": null
+        "risultato": {
+            "casa": 0,
+            "trasferta": 9
+        }
     },
     {
         "uid": "resistente@mujeres-r351573n7347l37150c14l1571-005",
@@ -69,7 +72,10 @@
         "ora": "21:00",
         "campo": "Scuola calcio Internazionale Genova",
         "descrizione": "Campionato UISP - Giornata 5",
-        "risultato": null
+        "risultato": {
+            "casa": 6,
+            "trasferta": 1
+        }
     },
     {
         "uid": "resistente@mujeres-r351573n7347l37150c14l1571-006",
