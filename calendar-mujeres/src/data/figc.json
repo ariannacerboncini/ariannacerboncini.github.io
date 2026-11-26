@@ -163,14 +163,17 @@
         "ora": "14:30",
         "campo": "Impianto sportivo Mauro Morgavi",
         "descrizione": "Campionato Seconda Categoria - Giornata 7",
-        "risultato": null
+        "risultato": {
+            "casa": 2,
+            "trasferta": 0
+        }
     },
     {
         "uid": "resistente@figc-r351573n7347l37150c14l1571-013",
         "squadraCasa": "Alta Val D'Orba",
         "squadraTrasferta": "La Resistente",
         "data": "2026-11-28",
-        "ora": "14:30",
+        "ora": "15:00",
         "campo": "Campo Sportivo Comunale Oliveri Luigi e Pasquale, Campo Ligure",
         "descrizione": "Campionato Seconda Categoria - Giornata 8",
         "risultato": null
